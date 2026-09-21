@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; Schedule — VK Engineers, Inc.</title>
+<meta name="description" content="Contact VK Engineers, Inc. or request a 15-minute consultation call. La Crescenta, CA — (818) 500-0360.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="page-intro">
+  <div class="container">
+    <span class="eyebrow">Get In Touch</span>
+    <h1>Tell us about the project.</h1>
+    <p class="page-intro-lead">We respond within one business day.</p>
+  </div>
+</section>
+
+<!-- =========================================================
+     CONTACT INFO + PROJECT INQUIRY FORM
+     ========================================================= -->
+<section class="section-alt">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <span class="eyebrow">Studio</span>
+        <h2>Reach us directly.</h2>
+        <div class="contact-info-list">
+          <div>
+            <div class="label">Address</div>
+            <div class="value">2529 Foothill Blvd, Suite 206<br>La Crescenta, CA 91214</div>
+          </div>
+          <div>
+            <div class="label">Direct</div>
+            <div class="value"><a href="tel:+18185000360">(818) 500-0360</a></div>
+          </div>
+          <div>
+            <div class="label">Email</div>
+            <div class="value"><a href="mailto:info@vkengse.com">info@vkengse.com</a></div>
+          </div>
+          <div>
+            <div class="label">Hours</div>
+            <div class="value">Monday &ndash; Friday, 8:00 AM &ndash; 5:00 PM</div>
+          </div>
+        </div>
+        <div class="map-embed">
+          <iframe
+            title="VK Engineers location map"
+            src="https://www.google.com/maps?q=2529+Foothill+Blvd+Suite+206,+La+Crescenta,+CA+91214&output=embed"
+            loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contact-form">
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div class="field">
+            <label for="service">Project Type</label>
+            <select id="service" name="service">
+              <option value="">Select a service&hellip;</option>
+              <option>Structural Engineering</option>
+              <option>Architecture</option>
+              <option>Civil Engineering</option>
+              <option>Seismic / Soft-Story Retrofit</option>
+              <option>Plan Review</option>
+              <option>Construction Administration</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="details">Project Details *</label>
+          <textarea id="details" name="details" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Inquiry</button>
+        <p class="form-note">
+          Opens your email client with the details pre-filled, sent directly to info@vkengse.com.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SCHEDULE A CONSULTATION — request, not instant booking
+     ========================================================= -->
+<section class="section-dark" id="schedule">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Schedule a Call</span>
+      <h2>Request a 15-minute consultation.</h2>
+      <p>Tell us a few times that work for you and what you'd like to cover. One of the principals will confirm a specific time by email or phone — this isn't an instant booking, so nothing is on the calendar until you hear back from us.</p>
+    </div>
+
+    <form class="contact-form schedule-form" id="schedule-form">
+      <div class="form-row">
+        <div class="field">
+          <label for="s-name">Name *</label>
+          <input type="text" id="s-name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="s-email">Email *</label>
+          <input type="email" id="s-email" name="email" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="s-phone">Phone</label>
+          <input type="tel" id="s-phone" name="phone">
+        </div>
+        <div class="field">
+          <label for="s-format">Meeting Format</label>
+          <select id="s-format" name="format">
+            <option>Phone Call</option>
+            <option>Video Call</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="s-date1">Preferred Date &amp; Time *</label>
+          <input type="datetime-local" id="s-date1" name="date1" required>
+        </div>
+        <div class="field">
+          <label for="s-date2">Second Choice (optional)</label>
+          <input type="datetime-local" id="s-date2" name="date2">
+        </div>
+      </div>
+      <div class="field">
+        <label for="s-reason">What would you like to cover? *</label>
+        <textarea id="s-reason" name="reason" placeholder="A short summary of the project or question helps us make the most of 15 minutes." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Request Consultation</button>
+      <p class="form-note">
+        This sends a request to info@vkengse.com — it does not book a slot automatically. We'll
+        reply to confirm (or suggest another time) within one business day.
+      </p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/partials.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

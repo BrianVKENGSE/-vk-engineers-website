@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — VK Engineers, Inc.</title>
+<meta name="description" content="Selected structural, architectural, civil, and specialty projects from VK Engineers, Inc. across Los Angeles County and beyond.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<section class="page-intro">
+  <div class="container">
+    <span class="eyebrow">Selected Work</span>
+    <h1>Projects across LA County &amp; beyond.</h1>
+    <p class="page-intro-lead">Filter by discipline, then by current or past status. Click any project for more detail.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="filter-tabs" id="discipline-tabs">
+      <button class="filter-tab is-active" data-discipline="all">All Disciplines</button>
+      <button class="filter-tab" data-discipline="architecture">Architecture</button>
+      <button class="filter-tab" data-discipline="structural">Structural</button>
+      <button class="filter-tab" data-discipline="civil">Civil</button>
+      <button class="filter-tab" data-discipline="specialty">Specialty</button>
+    </div>
+    <div class="filter-tabs filter-tabs-secondary" id="status-tabs">
+      <button class="filter-tab is-active" data-status="all">All Projects</button>
+      <button class="filter-tab" data-status="current">Current</button>
+      <button class="filter-tab" data-status="past">Past</button>
+    </div>
+    <p class="projects-count" id="projects-count"></p>
+
+    <div class="projects-grid" id="projects-grid"><!-- rendered by js/script.js from js/projects-data.js --></div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="js/projects-data.js"></script>
+<script src="js/partials.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; Schedule — VK Engineers, Inc.</title>
+<meta name="description" content="Contact VK Engineers, Inc. or request a 15-minute consultation call. La Crescenta, CA — (818) 500-0360.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- REVIEW BAR — for comparing versions only. DELETE this block (on every page) before going live. -->
+<div style="background:#141821;color:#cfd4e4;font:600 12px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:9px 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;">
+  <span>Reviewing Version A — Simple</span>
+  <span><a href="../advanced/contact.html" style="color:#fff;margin-right:18px;">View Version B — Advanced →</a><a href="../index.html" style="color:#9aa4bd;">Back to comparison</a></span>
+</div>
+
+<!-- HEADER — this same block appears on every page. To change the menu, edit it on each page. -->
+<header class="site">
+  <div class="wrap site-inner">
+    <a class="brand" href="index.html">VK Engineers<small>Structural &amp; Architecture</small></a>
+    <nav class="main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Get In Touch</span>
+    <h1>Tell us about the project.</h1>
+    <p class="lead">We respond within one business day.</p>
+  </div>
+</section>
+
+<!-- CONTACT INFO + PROJECT INQUIRY -->
+<section>
+  <div class="wrap grid-2">
+    <div class="info">
+      <span class="kicker">Studio</span>
+      <h2>Reach us directly.</h2>
+      <dl>
+        <dt>Address</dt><dd>2529 Foothill Blvd, Suite 206<br>La Crescenta, CA 91214</dd>
+        <dt>Phone</dt><dd><a href="tel:+18185000360">(818) 500-0360</a></dd>
+        <dt>Email</dt><dd><a href="mailto:info@vkengse.com">info@vkengse.com</a></dd>
+        <dt>Hours</dt><dd>Monday – Friday, 8:00 AM – 5:00 PM</dd>
+      </dl>
+      <div class="map">
+        <iframe title="VK Engineers office location"
+          src="https://www.google.com/maps?q=2529+Foothill+Blvd+Suite+206,+La+Crescenta,+CA+91214&output=embed"
+          loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div>
+      <span class="kicker">Project Inquiry</span>
+      <h2>Send us the details.</h2>
+      <!-- This form opens the visitor's email app with the fields filled in — no server needed. -->
+      <form action="mailto:info@vkengse.com?subject=Project%20Inquiry" method="post" enctype="text/plain">
+        <div class="row">
+          <div><label for="name">Name *</label><input type="text" id="name" name="Name" required></div>
+          <div><label for="email">Email *</label><input type="email" id="email" name="Email" required></div>
+        </div>
+        <div class="row">
+          <div><label for="phone">Phone</label><input type="tel" id="phone" name="Phone"></div>
+          <div>
+            <label for="service">Project Type</label>
+            <select id="service" name="Project_Type">
+              <option value="">Select a service…</option>
+              <option>Structural Engineering</option>
+              <option>Architecture</option>
+              <option>Civil Engineering</option>
+              <option>Seismic / Soft-Story Retrofit</option>
+              <option>Plan Review</option>
+              <option>Construction Administration</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div><label for="details">Project Details *</label><textarea id="details" name="Project_Details" required></textarea></div>
+        <div><button type="submit" class="btn primary">Send Inquiry</button></div>
+        <p class="note">Opens your email client with the details pre-filled, sent to info@vkengse.com.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE A CONSULTATION — a request, not an instant booking -->
+<section class="alt" id="schedule">
+  <div class="wrap">
+    <span class="kicker">Schedule a Call</span>
+    <h2>Request a 15-minute consultation.</h2>
+    <p class="lead" style="margin-bottom: 32px;">
+      Tell us a few times that work for you and what you'd like to cover. One of the principals
+      will confirm a specific time by email or phone — nothing is on the calendar until you hear
+      back from us.
+    </p>
+    <form action="mailto:info@vkengse.com?subject=Consultation%20Request" method="post" enctype="text/plain">
+      <div class="row">
+        <div><label for="s-name">Name *</label><input type="text" id="s-name" name="Name" required></div>
+        <div><label for="s-email">Email *</label><input type="email" id="s-email" name="Email" required></div>
+      </div>
+      <div class="row">
+        <div><label for="s-phone">Phone</label><input type="tel" id="s-phone" name="Phone"></div>
+        <div>
+          <label for="s-format">Meeting Format</label>
+          <select id="s-format" name="Format"><option>Phone Call</option><option>Video Call</option></select>
+        </div>
+      </div>
+      <div class="row">
+        <div><label for="s-date1">Preferred Date &amp; Time *</label><input type="datetime-local" id="s-date1" name="Preferred_Time" required></div>
+        <div><label for="s-date2">Second Choice (optional)</label><input type="datetime-local" id="s-date2" name="Second_Choice"></div>
+      </div>
+      <div><label for="s-reason">What would you like to cover? *</label><textarea id="s-reason" name="Topic" required></textarea></div>
+      <div><button type="submit" class="btn primary">Request Consultation</button></div>
+      <p class="note">This sends a request to info@vkengse.com — it does not book a slot automatically. We'll reply to confirm within one business day.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER — this same block appears on every page -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="index.html">VK Engineers</a>
+        <p style="margin-top: 12px;">Structural engineering and architecture, La Crescenta, CA. Serving Los Angeles County since 1988.</p>
+      </div>
+      <div>
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="services.html#architecture">Architecture</a></li>
+          <li><a href="services.html#structural">Structural Engineering</a></li>
+          <li><a href="services.html#civil">Civil Engineering</a></li>
+          <li><a href="services.html#specialty">Specialty Structural</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="tel:+18185000360">(818) 500-0360</a></li>
+          <li><a href="mailto:info@vkengse.com">info@vkengse.com</a></li>
+          <li>2529 Foothill Blvd, Suite 206<br>La Crescenta, CA 91214</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>&copy; 2026 VK Engineers, Inc. All rights reserved.</span>
+      <span>Vicken Khatchadourian, S.E. #3141 &middot; Jonathan Sagherian, #37138</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

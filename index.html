@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VK Engineers — Website Options</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* This is an internal comparison page for choosing between the two versions.
+     It is not part of the public website — deploy the contents of ONE of the
+     two folders (simple/ or advanced/) as the live site. */
+  :root { --ink:#141821; --soft:#5b6270; --line:#e3e3df; --navy:#0f1720; --blue:#2f5d8a; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: Inter, system-ui, sans-serif; color: var(--ink); background:#f7f7f5; line-height:1.6; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 72px 24px; }
+  .kicker { display:block; font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:var(--blue); font-weight:700; margin-bottom:14px; }
+  h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); margin:0 0 .4em; letter-spacing:-.01em; }
+  .lead { color: var(--soft); font-size:1.1rem; max-width:64ch; margin-bottom:48px; }
+  .options { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:8px; overflow:hidden; display:flex; flex-direction:column; text-decoration:none; color:inherit; transition: transform .15s ease, box-shadow .15s ease; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 16px 32px rgba(15,23,32,.10); }
+  .card .preview { height:180px; display:flex; align-items:flex-end; padding:20px; font-weight:700; font-size:1.1rem; }
+  .card.simple .preview { background:#fff; border-bottom:1px solid var(--line); color:var(--ink); }
+  .card.advanced .preview {
+    background-color: var(--navy); color:#fff;
+    background-image: linear-gradient(rgba(158,184,212,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(158,184,212,.08) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .card .body { padding: 24px; flex:1; display:flex; flex-direction:column; }
+  .card h2 { margin:0 0 6px; font-size:1.3rem; }
+  .tag { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--blue); margin-bottom:12px; }
+  .card p { color:var(--soft); font-size:.95rem; margin:0 0 16px; }
+  .card ul { margin:0 0 24px; padding-left:18px; color:var(--soft); font-size:.9rem; }
+  .card li { margin-bottom:6px; }
+  .btn { display:inline-block; margin-top:auto; padding:12px 20px; border-radius:4px; background:var(--blue); color:#fff; font-weight:600; text-decoration:none; text-align:center; }
+  .btn:hover { background:#1f4265; }
+  .note { margin-top:40px; padding:20px 24px; background:#fff; border:1px solid var(--line); border-radius:8px; font-size:.9rem; color:var(--soft); }
+  .note strong { color: var(--ink); }
+  @media (max-width: 720px) { .options { grid-template-columns:1fr; } .wrap { padding:48px 20px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="kicker">VK Engineers, Inc. · Website Review</span>
+  <h1>Two directions for the new site.</h1>
+  <p class="lead">
+    Same content, same pages, same contact and scheduling flow — two different approaches to
+    design and maintenance. Click into each one and browse it like a visitor would.
+  </p>
+
+  <div class="options">
+    <a class="card simple" href="simple/">
+      <div class="preview">Version A — Simple</div>
+      <div class="body">
+        <span class="tag">Clean · Minimal · No JavaScript</span>
+        <h2>The Simple Version</h2>
+        <p>Light, quiet, and utilitarian. Everything on each page is literally in that page's file — what you see is what you edit.</p>
+        <ul>
+          <li>Plain HTML + one small stylesheet, no scripts at all</li>
+          <li>Easiest possible manual editing for a non-technical person</li>
+          <li>Projects shown as clean grouped lists (no individual project pages)</li>
+          <li>Trade-off: the menu and footer are repeated in each of the 5 files</li>
+        </ul>
+        <span class="btn">Open Version A →</span>
+      </div>
+    </a>
+
+    <a class="card advanced" href="advanced/">
+      <div class="preview">Version B — Advanced</div>
+      <div class="body">
+        <span class="tag">Editorial · Illustrated · Interactive</span>
+        <h2>The Advanced Version</h2>
+        <p>Dark, editorial, and visually rich — custom structural illustrations, scroll animations, hover previews, and a filterable project gallery with a page for every project.</p>
+        <ul>
+          <li>Shared menu &amp; footer — edit once, updates all pages</li>
+          <li>Project list lives in one data file; each project gets its own page</li>
+          <li>Animated stats, scroll-reveal sections, hover details</li>
+          <li>Trade-off: a little more structure to learn before editing</li>
+        </ul>
+        <span class="btn">Open Version B →</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="note">
+    <strong>For whoever maintains the site later:</strong> both versions are plain files that open in
+    any text editor. The <strong>README.md</strong> in this folder explains exactly which file to open
+    to change what, for each version. To go live, upload the contents of the chosen folder
+    (<code>simple/</code> or <code>advanced/</code>) as the website — not this comparison page.
+  </div>
+</div>
+</body>
+</html>
