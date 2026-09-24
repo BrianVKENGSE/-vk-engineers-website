@@ -138,9 +138,11 @@ section { padding: 96px 0; }
   align-items: center;
   gap: 10px;
   color: #fff;
+  flex: 0 0 auto;
+  min-width: 0;
 }
 /* Company logo. To make it bigger or smaller, change the height values. */
-.logo-img { height: 48px; width: auto; }
+.logo-img { height: 48px; width: auto; flex: 0 0 auto; }
 .logo-img-foot { height: 56px; }
 .logo-text { line-height: 1.2; padding-left: 12px; border-left: 1px solid rgba(255,255,255,0.18); }
 .logo-text span { display: block; font-size: 0.62rem; letter-spacing: 0.12em; color: #9aa4bd; text-transform: uppercase; }
