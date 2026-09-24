@@ -9,17 +9,16 @@
 
 const SITE_HEADER = `
 <!-- REVIEW BAR — for comparing versions only. DELETE this div before going live. -->
-<div style="background:#2f5d8a;color:#e6eef8;font:600 12px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:9px 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;">
+<div style="background:#0372ba;color:#e6eef8;font:600 12px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:9px 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;">
   <span>Reviewing Version B — Advanced</span>
   <span><a href="../simple/index.html" style="color:#fff;margin-right:18px;">View Version A — Simple →</a><a href="../index.html" style="color:#c9d6e6;">Back to comparison</a></span>
 </div>
 <div class="header-inner">
+  <!-- LOGO -- to change it, replace images/logo-light.png (used on dark backgrounds)
+       and images/logo.png (used on light ones) with new files of the same names. -->
   <a href="index.html" class="logo">
-    <span class="logo-mark">VK</span>
-    <span class="logo-text">
-      <strong>VK Engineers</strong>
-      <span>Structural &amp; Architecture</span>
-    </span>
+    <img class="logo-img" src="images/logo-light.png" alt="VK Engineers, Inc." width="541" height="354">
+    <span class="logo-text"><span>Structural &amp; Architecture</span></span>
   </a>
   <nav class="nav-links">
     <a href="index.html">Home</a>
@@ -39,8 +38,7 @@ const SITE_FOOTER = `
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="logo">
-        <span class="logo-mark">VK</span>
-        <span class="logo-text"><strong>VK Engineers</strong></span>
+        <img class="logo-img logo-img-foot" src="images/logo-light.png" alt="VK Engineers, Inc." width="541" height="354">
       </a>
       <p>Structural engineering and architecture, La Crescenta, CA. Serving Los Angeles County since 1988.</p>
     </div>

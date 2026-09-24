@@ -10,8 +10,8 @@
   --ink: #141821;        /* main text */
   --soft: #5b6270;       /* secondary text */
   --line: #e3e3df;       /* thin dividers */
-  --accent: #2f5d8a;     /* links, highlights, buttons */
-  --accent-dark: #1f4265;
+  --accent: #0372ba;     /* links, highlights, buttons -- taken from the company logo */
+  --accent-dark: #025b96;
   --bg: #ffffff;
   --bg-alt: #f7f7f5;     /* alternating section background */
   --max: 1040px;         /* page content width */
@@ -43,7 +43,10 @@ header.site { border-bottom: 1px solid var(--line); }
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
   gap: 16px; padding: 18px 0;
 }
-.brand { font-weight: 800; color: var(--ink); font-size: 1.1rem; }
+.brand { display: inline-block; font-weight: 800; color: var(--ink); font-size: 1.1rem; }
+/* Company logo. Change its size by changing the height below. */
+.brand img { height: 48px; width: auto; }
+.brand-foot img { height: 34px; }
 .brand small {
   display: block; font-weight: 500; font-size: 0.72rem; color: var(--soft);
   letter-spacing: 0.08em; text-transform: uppercase;

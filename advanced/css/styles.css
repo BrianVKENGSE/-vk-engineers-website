@@ -11,8 +11,8 @@
   /* Colors — steel/navy palette, one restrained accent */
   --color-navy: #0f1720;
   --color-navy-light: #1a2532;
-  --color-blue: #2f5d8a;
-  --color-blue-dark: #1f4265;
+  --color-blue: #0372ba;      /* the blue in the company logo */
+  --color-blue-dark: #025b96;
   --color-cream: #f6f5f2;
   --color-white: #ffffff;
   --color-ink: #14181f;
@@ -139,21 +139,10 @@ section { padding: 96px 0; }
   gap: 10px;
   color: #fff;
 }
-.logo-mark {
-  width: 38px;
-  height: 38px;
-  border-radius: 4px;
-  background: var(--color-blue);
-  color: #fff;
-  font-family: var(--font-display);
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-}
-.logo-text { line-height: 1.2; }
-.logo-text strong { display: block; font-size: 0.98rem; font-weight: 700; }
+/* Company logo. To make it bigger or smaller, change the height values. */
+.logo-img { height: 48px; width: auto; }
+.logo-img-foot { height: 56px; }
+.logo-text { line-height: 1.2; padding-left: 12px; border-left: 1px solid rgba(255,255,255,0.18); }
 .logo-text span { display: block; font-size: 0.62rem; letter-spacing: 0.12em; color: #9aa4bd; text-transform: uppercase; }
 
 .nav-links {
@@ -729,7 +718,6 @@ section .btn-outline:not(.dark-bg) {
   padding-bottom: 48px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-.footer-brand .logo-text strong { color: #fff; }
 .footer-brand p { font-size: 0.88rem; margin-top: 16px; max-width: 32ch; }
 .footer-col h5 {
   color: #fff;
@@ -790,6 +778,8 @@ section .btn-outline:not(.dark-bg) {
 }
 
 @media (max-width: 680px) {
+  .logo-img { height: 32px; }
+  .logo-text { display: none; }
   section { padding: 64px 0; }
   .nav-links {
     position: absolute;

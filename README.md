@@ -91,8 +91,6 @@ advanced/js/script.js       Animations, filters, popovers, forms
   footage, description, photos). Both the Projects grid and that project's
   own page (`project.html#its-slug`) build themselves from this list.
 - **Add real photos:** drop images into `advanced/images/`, then:
-  - Logo — replace the "VK" badge in `js/partials.js` with
-    `<img src="images/logo.png" alt="VK Engineers">`.
   - Team/principal photos — replace the initials circles in `about.html`.
   - Project photos — set `images.actual` / `images.render` on that project's
     entry in `projects-data.js`.
@@ -104,6 +102,32 @@ advanced/js/script.js       Animations, filters, popovers, forms
   "reduce motion" setting. To turn them off entirely, delete the
   "Scroll-reveal" and "Animated stat counters" blocks at the top of
   `advanced/js/script.js`.
+
+---
+
+## The logo (both versions)
+
+Each version has its own `images` folder holding three files, made from the
+company logo you supplied:
+
+```
+logo.png        the logo in its normal colours — used on white backgrounds
+logo-light.png  the same logo with the grey "V" turned white — used on the
+                dark navy header and footer of Version B
+favicon.png     the small "VK" icon shown on the browser tab
+```
+
+**To change the logo later,** replace these files with new ones **using the
+same file names**. Nothing else needs editing. Use PNG files with a
+transparent background so no white box appears behind the logo.
+
+**To make the logo bigger or smaller,** open that version's stylesheet and
+change a height value. In `simple/css/styles.css` look for `.brand img`
+(header) and `.brand-foot img` (footer). In `advanced/css/styles.css` look
+for `.logo-img` (header) and `.logo-img-foot` (footer).
+
+The blue used across both sites (`#0372ba`) is taken from the logo, so the
+site and the logo match exactly.
 
 ---
 
@@ -187,8 +211,6 @@ documented by every host above.
 
 ## What still needs real content
 
-- **Logo file** — both versions use a "VK" text badge until the real logo is
-  supplied.
 - **Photos** — team headshots, the office, and project photos. Version B has
   clean placeholders that swap for images; Version A simply has no image
   slots yet (add `<img>` tags where you'd like them).
