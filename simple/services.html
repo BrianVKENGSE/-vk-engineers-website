@@ -13,7 +13,7 @@
 <body>
 
 <!-- REVIEW BAR — for comparing versions only. DELETE this block (on every page) before going live. -->
-<div style="background:#141821;color:#cfd4e4;font:600 12px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:9px 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;">
+<div class="review-bar" style="background:#141821;color:#cfd4e4;font:600 12px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:9px 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;">
   <span>Reviewing Version A — Simple</span>
   <span><a href="../advanced/services.html" style="color:#fff;margin-right:18px;">View Version B — Advanced →</a><a href="../index.html" style="color:#9aa4bd;">Back to comparison</a></span>
 </div>
@@ -169,6 +169,10 @@
     </div>
   </div>
 </footer>
+
+<!-- Click-to-edit mode. Only runs when the address ends in ?edit=1 -- see README.
+     Normal visitors never load anything from it. -->
+<script src="js/edit.js"></script>
 
 </body>
 </html>

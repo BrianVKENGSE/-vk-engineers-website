@@ -154,7 +154,65 @@ the same approval control.
 
 ---
 
-## Editing the live site on GitHub (no software, no AI)
+## Editing by clicking on the website (the easy way)
+
+The site has a built-in edit mode. You look at a page, click the words you
+want to change, type, and press Save. No code, no GitHub screens.
+
+**Using it**
+
+1. Open a page of the live site and add `?edit=1` to the end of the address,
+   for example:
+   `https://brianvkengse.github.io/-vk-engineers-website/simple/about.html?edit=1`
+   Save that as a bookmark called "Edit website" so nobody has to remember it.
+2. A dark bar appears at the bottom of the screen.
+3. Click any heading, paragraph, list item or caption. It gets a blue outline.
+   Type over it like a Word document.
+4. Click a grey photo box, or an existing photo, to pick a picture from your
+   computer.
+5. Press **Save changes**. The live site updates about a minute later.
+6. Press **Done** when you finish. Edit mode stays on while you move between
+   pages, so you can fix several pages in one go, saving each one.
+
+Visitors never see any of this. Edit mode only appears when the address ends
+in `?edit=1`.
+
+**The one-time setup: an access key**
+
+The first time somebody presses Save, the site asks for an access key. This
+proves the person is allowed to change the website. Create one like this:
+
+1. Sign in to github.com with the firm account.
+2. Go to **Settings**, then **Developer settings** at the very bottom of the
+   left menu, then **Personal access tokens**, then **Fine-grained tokens**.
+3. Click **Generate new token**.
+4. Name it something like "Website editing".
+5. Set **Expiration** to the longest option offered. Put a reminder in the
+   calendar to make a new one before it runs out.
+6. Under **Repository access**, choose **Only select repositories** and pick
+   the website repository.
+7. Under **Permissions**, open **Repository permissions**, find **Contents**,
+   and set it to **Read and write**. Leave everything else alone.
+8. Click **Generate token** and copy the long line of characters it shows.
+9. Back on the website in edit mode, press **Save changes** and paste it in.
+
+That browser remembers the key, so it is asked for once per computer. Anyone
+using that computer can edit the site, so use office machines only. If a
+computer is lost or somebody leaves, delete the key on the same GitHub screen
+and the access stops immediately.
+
+**What edit mode deliberately will not touch**
+
+- The top menu and the footer, because they are shared by every page.
+- The project list in Version B, which is built from `js/projects-data.js`.
+  The project list in Version A is ordinary text and can be edited normally.
+- Forms, buttons, the Google map, and the drawn illustrations.
+
+For those, use the GitHub method below.
+
+---
+
+## Editing the live site on GitHub (the fallback)
 
 The website lives in a GitHub repository owned by the firm's GitHub account.
 GitHub Pages publishes whatever is in that repository, so **editing a file on

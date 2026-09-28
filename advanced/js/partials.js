@@ -9,7 +9,7 @@
 
 const SITE_HEADER = `
 <!-- REVIEW BAR — for comparing versions only. DELETE this div before going live. -->
-<div style="background:#0372ba;color:#e6eef8;font:600 12px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:9px 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;">
+<div class="review-bar" style="background:#0372ba;color:#e6eef8;font:600 12px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:9px 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;">
   <span>Reviewing Version B — Advanced</span>
   <span><a href="../simple/index.html" style="color:#fff;margin-right:18px;">View Version A — Simple →</a><a href="../index.html" style="color:#c9d6e6;">Back to comparison</a></span>
 </div>
