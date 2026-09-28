@@ -237,6 +237,7 @@
       '<div class="vk-status" id="vk-status"></div>' +
       '<div class="vk-right">' +
         '<button type="button" id="vk-save">Save changes</button>' +
+        '<button type="button" id="vk-check" class="vk-ghost">Check key</button>' +
         '<button type="button" id="vk-undo" class="vk-ghost">Undo all</button>' +
         '<button type="button" id="vk-exit" class="vk-ghost">Done</button>' +
       '</div>';
@@ -244,6 +245,7 @@
     statusEl = bar.querySelector("#vk-status");
 
     bar.querySelector("#vk-save").addEventListener("click", save);
+    bar.querySelector("#vk-check").addEventListener("click", checkKey);
     bar.querySelector("#vk-undo").addEventListener("click", function () {
       if (dirty() && !confirm("Throw away the changes you just made on this page?")) return;
       changes = {}; uploads = [];
@@ -285,11 +287,55 @@
       "You only do this once on this computer. The README explains how to " +
       "create one (GitHub, Settings, Developer settings, Fine-grained tokens)."
     );
-    if (t) {
-      localStorage.setItem(TOKEN_KEY, t.trim());
-      return t.trim();
+    if (!t) return "";
+    t = t.trim();
+    if (t.indexOf("github_pat_") !== 0 && t.indexOf("ghp_") !== 0) {
+      say("That does not look like a GitHub key. A key is one long line starting with github_pat_", true);
+      return "";
     }
-    return "";
+    localStorage.setItem(TOKEN_KEY, t);
+    return t;
+  }
+
+  /* Says in plain words whether the key works, and if not, what to fix. */
+  async function checkKey() {
+    if (!token() && !askForToken()) return;
+    say("Checking the key…");
+    try {
+      var who = await fetch("https://api.github.com/user", {
+        headers: { Authorization: "Bearer " + token(), Accept: "application/vnd.github+json" }
+      });
+      if (who.status === 401) {
+        localStorage.removeItem(TOKEN_KEY);
+        say("That key is not valid, or it expired. Make a new one and press Check key again.", true);
+        return;
+      }
+      if (!who.ok) { say("GitHub said: " + (await detail(who)), true); return; }
+      var account = (await who.json()).login;
+
+      var repo = await fetch("https://api.github.com/repos/" + OWNER + "/" + REPO, {
+        headers: { Authorization: "Bearer " + token(), Accept: "application/vnd.github+json" }
+      });
+      if (!repo.ok) {
+        say("Key belongs to " + account + ", but it is not allowed to open this website's files. " +
+            "In the key's settings choose \"Only select repositories\" and pick " + REPO + ".", true);
+        return;
+      }
+      var perms = (await repo.json()).permissions || {};
+      if (!perms.push) {
+        say("Key belongs to " + account + " and can read the website, but not save to it. " +
+            "In the key's settings set Contents to \"Read and write\".", true);
+        return;
+      }
+      say("The key works. Signed in as " + account + ". Saving will go through.");
+    } catch (err) {
+      say(String(err.message || err), true);
+    }
+  }
+
+  async function detail(res) {
+    try { return (await res.json()).message || ("error " + res.status); }
+    catch (e) { return "error " + res.status; }
   }
 
   /* ---------- talking to GitHub ---------- */
@@ -480,9 +526,14 @@
   async function message(res) {
     var text = "";
     try { text = (await res.json()).message || ""; } catch (e) {}
-    if (res.status === 401 || res.status === 403) {
+    if (res.status === 401) {
       localStorage.removeItem(TOKEN_KEY);
-      return "The access key was refused. Press Save again and paste a new key.";
+      return "The key is not valid or has expired. Press Save again and paste a new one.";
+    }
+    if (res.status === 403) {
+      // the key is real but is missing a permission — keep it and say what to fix
+      return "The key is not allowed to save to this website. Press \"Check key\" to see " +
+             "which setting to change. (GitHub said: " + (text || "no detail") + ")";
     }
     if (res.status === 409) return "Someone else saved this page first. Reload and redo your change.";
     if (res.status === 404) return "Could not find this page in the website's files.";
